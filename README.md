@@ -17,4 +17,4 @@
 
 ## 📊 Dataset
 
-🔗 https://apasita.github.io/dataset.md
+[คลิกดูไฟล์ dataset](dataset.md)
