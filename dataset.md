@@ -1,3 +1,3 @@
 ![ร](images/01.jpg)
 
-[กลับไปหน้าหลัก (HOME)](README.md)
+[(HOME)](README.md)
