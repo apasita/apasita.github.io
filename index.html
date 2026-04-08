@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apasita Pasukree - Portfolio 2026</title>
+<style>
+  /* Reset และพื้นฐาน */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #e0e7ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .container {
+    max-width: 900px;
+    background: rgba(32, 58, 67, 0.85);
+    padding: 2.5rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #7dd3fc; /* ฟ้าอ่อน */
+  }
+  header p {
+    font-size: 1.25rem;
+    margin-top: 0.4rem;
+    color: #bae6fd;
+    font-style: italic;
+  }
+  section {
+    margin-bottom: 2.5rem;
+  }
+  section h2 {
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    color: #7dd3fc;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  ul.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+  }
+  ul.skills li {
+    background: #0284c7;
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgb(3 105 161 / 0.5);
+    transition: background 0.3s ease;
+    cursor: default;
+  }
+  ul.skills li:hover {
+    background: #0ea5e9;
+  }
+  a.button-link {
+    display: inline-block;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 0.6rem 1.6rem;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(56, 221, 248, 0.6);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  a.button-link:hover {
+    background: #7dd3fc;
+    color: #1e293b;
+  }
+  footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container {
+      padding: 1.5rem 1.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Apasita Pasukree</h1>
+      <p><strong>Nurse</strong> | นักศึกษา Artificial Intelligence | ม.หัวเฉียวเฉลิมพระเกียรติ</p>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>สวัสดีค่ะ ฉันชื่อ <strong>Apasita Pasukree (Nurse)</strong> กำลังศึกษาและพัฒนาทักษะด้าน
+        <em>Artificial Intelligence, Data Science และ Machine Learning</em> สนใจสร้างระบบอัจฉริยะและเทคโนโลยีอนาคต 🤖</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Artificial Intelligence</li>
+        <li>Machine Learning</li>
+        <li>Data Analysis (Python, Pandas)</li>
+        <li>Programming (Python, HTML, CSS)</li>
+        <li>Web Development</li>
+      </ul>
+    </section>
+
+    <section id="dataset">
+      <h2>Dataset</h2>
+      <a href="dataset.csv" target="_blank" class="button-link" rel="noopener noreferrer">
+        ดูไฟล์ dataset.csv
+      </a>
+    </section>
+
+    <section id="projects">
+      <h2>Projects (Coming Soon)</h2>
+      <ul>
+        <li>AI Project</li>
+        <li>Data Analysis Project</li>
+        <li>Web Portfolio</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>GitHub: <a href="https://github.com/apasita" target="_blank" rel="noopener noreferrer" style="color:#7dd3fc;">github.com/apasita</a></p>
+      <p>Email: <a href="mailto:your-email@example.com" style="color:#7dd3fc;">your-email@example.com</a></p>
+    </section>
+
+    <footer>
+      <p>© 2026 Apasita Pasukree - Portfolio</p>
+    </footer>
+  </main>
+</body>
+</html>
