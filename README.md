@@ -1,11 +1,4 @@
-# apasita.github.io
-
-## 👩‍💻 ข้อมูลส่วนตัว
-
-- ชื่อ: **Apasita Pasukree**
-- ชื่อเล่น: **Nurse**  
-- สถานะ: นักศึกษา  
-- มหาวิทยาลัย: มหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ  # 🎓 Apasita Pasukree
+# 🎓 Apasita Pasukree
 
 > *นักศึกษาสาขา Artificial Intelligence ที่หลงรักข้อมูลและการวิเคราะห์*
 
@@ -57,17 +50,3 @@
 ---
 
 *This site is part of a Data+ course assignment · Huachiew Chalermprakiet University*
-- คณะ: วิทยาศาสตร์และเทคโนโลยี  
-- สาขา: ปัญญาประดิษฐ์ (Artificial Intelligence)
-
----
-
-## 🌟 About Me
-สวัสดีค่ะ ฉันชื่อ Apasita เป็นนักศึกษาที่สนใจด้านปัญญาประดิษฐ์ และเทคโนโลยีสมัยใหม่  
-กำลังเรียนรู้และพัฒนาทักษะด้าน AI เพื่อสร้างผลงานในอนาคต 🚀
-
-## 📊 Dataset
-[คลิกดูไฟล์ dataset](dataset.md)
-
-## 📄 Assignment
-
