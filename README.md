@@ -56,17 +56,3 @@
 
 ---
 
-*This site is part of a Data+ course assignment · Huachiew Chalermprakiet University*
-- คณะ: วิทยาศาสตร์และเทคโนโลยี  
-- สาขา: ปัญญาประดิษฐ์ (Artificial Intelligence)
-
----
-
-## 🌟 About Me
-สวัสดีค่ะ ฉันชื่อ Apasita เป็นนักศึกษาที่สนใจด้านปัญญาประดิษฐ์ และเทคโนโลยีสมัยใหม่  
-กำลังเรียนรู้และพัฒนาทักษะด้าน AI เพื่อสร้างผลงานในอนาคต 🚀
-
-## 📊 Dataset
-[คลิกดูไฟล์ dataset](dataset.md)
-
-## 📄 Assignment
