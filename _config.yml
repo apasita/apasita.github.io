@@ -1,1 +1,9 @@
-remote_theme: alshedivat/al-folio
+remote_theme: just-the-docs/just-the-docs
+
+title: Apasita Pasukree
+description: "Data+ Lab Reports & Dataset Analysis"
+
+plugins:
+  - jekyll-remote-theme
+
+nav_sort: order
