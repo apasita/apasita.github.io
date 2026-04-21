@@ -1,6 +1,6 @@
 # 🎓 Apasita Pasukree
 
-> *นักศึกษาสาขา Artificial Intelligence ที่หลงรักข้อมูลและการวิเคราะห์*
+> *นักศึกษาสาขา Artificial Intelligence *
 
 ---
 
