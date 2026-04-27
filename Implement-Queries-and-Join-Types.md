@@ -102,4 +102,4 @@ FULL OUTER JOIN Enrollment ON Students.StudentID = Enrollment.StudentID
 
 ---
 
-[← กลับหน้าหลัก](README.md) · [→ ดู Lab 14.1.16](lab-14-1-16.md)
+[← กลับหน้าหลัก](README.md) · [→ ดู Lab 14.1.16](Build-Visuals-to-Make-an-Impact.md)
