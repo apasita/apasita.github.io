@@ -44,8 +44,8 @@
 
 | Lab | หัวข้อ | Module | คะแนน |
 |---|---|---|---|
-| [9.1.12](Implement-Queries-and-Join Types.md) | Implement Queries and Join Types | Module 9 — SQL | ✅ 9/9 |
-| [14.1.16](lab-14-1-16.md) | Build Visuals to Make an Impact | Module 14 — Visualization | ✅ 7/7 |
+| [9.1.12](Implement-Queries-and-Join-Types.md) | Implement Queries and Join Types | Module 9 — SQL | ✅ 9/9 |
+| [14.1.16](Build-Visuals-to-Make-an-Impact.md) | Build Visuals to Make an Impact | Module 14 — Visualization | ✅ 7/7 |
 
 ---
 
