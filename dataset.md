@@ -65,7 +65,7 @@ nav_order: 2
 
 ## 📈 Dashboard แบบ Interactive
 
-ดู Dashboard แบบ Interactive ที่รวม KPI, กราฟ 7 ชิ้น และ AI Q&A ได้ที่:
+ดู Dashboard
 
 **[→ เปิด Dashboard](dashboard/dashboard.html)**
 
@@ -73,7 +73,7 @@ nav_order: 2
 
 ---
 
-## 💡 Insights ที่ค้นพบ (จาก Python Analysis)
+## 💡 Insights ที่ค้นพบ
 
 ### 🔴 Insight 1: มกราคมอันตรายที่สุด
 
