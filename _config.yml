@@ -1,11 +1,7 @@
 remote_theme: just-the-docs/just-the-docs
 
 title: Apasita Pasukree
-description: "จากคำถามเรื่องรถ สู่การวิเคราะห์ข้อมูลอุบัติเหตุ 80,621 ราย"
+description: Data+ Lab Reports & Dataset Analysis
 
 plugins:
   - jekyll-remote-theme
-
-nav_sort: order
-
-footer_content: "Huachiew Chalermprakiet University · Data+ Course Assignment"
