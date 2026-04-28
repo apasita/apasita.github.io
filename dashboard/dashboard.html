@@ -8,18 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Noto+Serif+Thai:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0e1a;
-    --surface: #111827;
-    --card: #1a2236;
-    --border: #1e3a5f;
+    /* เปลี่ยนเป็นโทนสว่าง (Light Theme) */
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --border: #e2e8f0;
     --accent: #e63946;
     --accent2: #f4a261;
     --accent3: #2a9d8f;
     --accent4: #457b9d;
-    --text: #e8edf5;
-    --muted: #6b7a99;
-    --gold: #f6c90e;
-    --glow: rgba(230,57,70,0.15);
+    --text: #1e293b;
+    --muted: #64748b;
+    --gold: #d4af37;
+    --glow: rgba(230,57,70,0.1);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -35,8 +36,8 @@
     content: '';
     position: fixed; inset: 0;
     background-image:
-      linear-gradient(rgba(30,58,95,0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(30,58,95,0.08) 1px, transparent 1px);
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -47,7 +48,7 @@
     position: relative;
     padding: 40px 40px 30px;
     border-bottom: 1px solid var(--border);
-    background: linear-gradient(180deg, rgba(230,57,70,0.05) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(230,57,70,0.05) 0%, #ffffff 100%);
     z-index: 1;
   }
   .header-tag {
@@ -81,7 +82,7 @@
     flex-wrap: wrap;
   }
   .meta-chip {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 6px 14px;
@@ -115,9 +116,14 @@
     padding: 20px 22px;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
   }
-  .kpi:hover { border-color: var(--accent4); }
+  .kpi:hover { 
+    border-color: var(--accent4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  }
   .kpi::before {
     content: '';
     position: absolute;
@@ -177,6 +183,7 @@
     border-radius: 12px;
     padding: 24px;
     position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
   }
   .card-title {
     font-size: 14px;
@@ -204,10 +211,11 @@
     padding: 20px;
     border-left: 4px solid;
     transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
   }
   .insight-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
   .insight-card.i1 { border-color: var(--accent); }
   .insight-card.i2 { border-color: var(--accent4); }
@@ -260,7 +268,7 @@
     transition: all 0.2s;
     font-weight: 600;
   }
-  .ai-tab:hover { border-color: var(--accent4); color: var(--text); }
+  .ai-tab:hover { border-color: var(--accent4); color: var(--accent4); background: rgba(69,123,157,0.05); }
   .ai-tab.active {
     background: var(--accent);
     border-color: var(--accent);
@@ -283,11 +291,11 @@
   .ai-logo.claude { background: linear-gradient(135deg, #c47a4a, #8a4f28); color: #fff; }
   .ai-logo.chatgpt { background: linear-gradient(135deg, #10a37f, #0d8a6b); color: #fff; }
   .ai-logo.gemini { background: linear-gradient(135deg, #4285f4, #a142f4); color: #fff; }
-  .ai-name { font-weight: 700; font-size: 15px; }
+  .ai-name { font-weight: 700; font-size: 15px; color: var(--text); }
   .ai-model { font-size: 11px; color: var(--muted); }
   .ai-insights { display: flex; flex-direction: column; gap: 12px; }
   .ai-insight-item {
-    background: var(--surface);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 14px 16px;
@@ -297,7 +305,7 @@
   .ai-insight-item .hypothesis {
     margin-top: 8px;
     padding: 8px 12px;
-    background: rgba(69,123,157,0.1);
+    background: rgba(69,123,157,0.05);
     border-left: 3px solid var(--accent4);
     border-radius: 0 4px 4px 0;
     font-size: 12px;
@@ -306,8 +314,8 @@
   .ai-recommend {
     margin-top: 12px;
     padding: 12px 16px;
-    background: rgba(42,157,143,0.08);
-    border: 1px solid rgba(42,157,143,0.25);
+    background: rgba(42,157,143,0.05);
+    border: 1px solid rgba(42,157,143,0.2);
     border-radius: 8px;
   }
   .ai-recommend h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent3); margin-bottom: 8px; }
@@ -318,7 +326,7 @@
   /* COMPARISON TABLE */
   .comp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .comp-table th {
-    background: var(--surface);
+    background: var(--bg);
     padding: 10px 14px;
     text-align: left;
     font-size: 11px;
@@ -329,11 +337,11 @@
   }
   .comp-table td {
     padding: 12px 14px;
-    border-bottom: 1px solid rgba(30,58,95,0.5);
+    border-bottom: 1px solid var(--border);
     vertical-align: top;
     line-height: 1.6;
   }
-  .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .comp-table tr:hover td { background: rgba(0,0,0,0.02); }
   .badge {
     display: inline-block;
     padding: 2px 8px;
@@ -342,80 +350,9 @@
     font-weight: 700;
     margin: 1px;
   }
-  .badge.good { background: rgba(42,157,143,0.2); color: var(--accent3); }
-  .badge.warn { background: rgba(244,162,97,0.2); color: var(--accent2); }
-  .badge.best { background: rgba(230,57,70,0.2); color: var(--accent); }
-
-  /* PROMPT AREA */
-  .prompt-area {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-  .prompt-area textarea {
-    flex: 1;
-    min-width: 200px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    font-family: 'Sarabun', sans-serif;
-    font-size: 13px;
-    padding: 10px 14px;
-    resize: vertical;
-    min-height: 80px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .prompt-area textarea:focus { border-color: var(--accent4); }
-  .btn-ask {
-    padding: 10px 22px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Sarabun', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    align-self: flex-end;
-    white-space: nowrap;
-  }
-  .btn-ask:hover { background: #c42c38; transform: translateY(-1px); }
-  .btn-ask:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-  .ai-response-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    min-height: 80px;
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.8;
-    white-space: pre-wrap;
-  }
-  .ai-response-box.loading { color: var(--muted); font-style: italic; }
-  .ai-response-box.error { color: var(--accent); border-color: var(--accent); }
-  .quick-q {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-  }
-  .quick-btn {
-    padding: 5px 12px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    border-radius: 20px;
-    font-size: 12px;
-    font-family: 'Sarabun', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .quick-btn:hover { border-color: var(--accent4); color: var(--text); }
+  .badge.good { background: rgba(42,157,143,0.1); color: var(--accent3); }
+  .badge.warn { background: rgba(244,162,97,0.15); color: var(--accent2); }
+  .badge.best { background: rgba(230,57,70,0.1); color: var(--accent); }
 
   /* STORYTELLING */
   .story-block {
@@ -435,11 +372,12 @@
     display: flex; align-items: center; justify-content: center;
     font-weight: 800;
     font-size: 16px;
+    background: #fff;
   }
-  .story-circle.s1 { background: rgba(230,57,70,0.15); color: var(--accent); border: 2px solid var(--accent); }
-  .story-circle.s2 { background: rgba(69,123,157,0.15); color: var(--accent4); border: 2px solid var(--accent4); }
-  .story-circle.s3 { background: rgba(244,162,97,0.15); color: var(--accent2); border: 2px solid var(--accent2); }
-  .story-circle.s4 { background: rgba(42,157,143,0.15); color: var(--accent3); border: 2px solid var(--accent3); }
+  .story-circle.s1 { color: var(--accent); border: 2px solid var(--accent); }
+  .story-circle.s2 { color: var(--accent4); border: 2px solid var(--accent4); }
+  .story-circle.s3 { color: var(--accent2); border: 2px solid var(--accent2); }
+  .story-circle.s4 { color: var(--accent3); border: 2px solid var(--accent3); }
   .story-line {
     width: 2px;
     flex: 1;
@@ -497,7 +435,6 @@
 
 <main>
 
-  <!-- KPI -->
   <div>
     <div class="section-label">ภาพรวม</div>
     <div class="section-title">Key Performance Indicators</div>
@@ -531,7 +468,6 @@
     </div>
   </div>
 
-  <!-- TREND + MONTHLY -->
   <div>
     <div class="section-label">แนวโน้ม</div>
     <div class="section-title">จำนวนผู้เสียชีวิตตามปีและเดือน</div>
@@ -550,7 +486,6 @@
     </div>
   </div>
 
-  <!-- SEX + VEHICLE + AGE -->
   <div>
     <div class="section-label">การวิเคราะห์เชิงประชากร</div>
     <div class="section-title">เพศ · ยานพาหนะ · กลุ่มอายุ</div>
@@ -574,7 +509,6 @@
     </div>
   </div>
 
-  <!-- PROVINCE + HOUR -->
   <div>
     <div class="chart-grid-2">
       <div class="card">
@@ -590,7 +524,6 @@
     </div>
   </div>
 
-  <!-- SEX TREND -->
   <div>
     <div class="card">
       <div class="card-title">📊 แนวโน้มผู้เสียชีวิตแยกเพศ 5 ปี</div>
@@ -599,7 +532,6 @@
     </div>
   </div>
 
-  <!-- INSIGHTS -->
   <div>
     <div class="section-label">ข้อค้นพบ</div>
     <div class="section-title">5 Insights สำคัญจากข้อมูล</div>
@@ -638,7 +570,6 @@
     </div>
   </div>
 
-  <!-- AI ANALYSIS -->
   <div>
     <div class="section-label">AI Analysis</div>
     <div class="section-title">วิเคราะห์ด้วย 3 AI Models</div>
@@ -651,7 +582,6 @@
         <button class="ai-tab" onclick="switchAI('compare')">📊 เปรียบเทียบ</button>
       </div>
 
-      <!-- CLAUDE -->
       <div class="ai-content active" id="ai-claude">
         <div class="ai-header">
           <div class="ai-logo claude">C</div>
@@ -684,7 +614,6 @@
         </div>
       </div>
 
-      <!-- CHATGPT -->
       <div class="ai-content" id="ai-chatgpt">
         <div class="ai-header">
           <div class="ai-logo chatgpt">G</div>
@@ -717,7 +646,6 @@
         </div>
       </div>
 
-      <!-- GEMINI -->
       <div class="ai-content" id="ai-gemini">
         <div class="ai-header">
           <div class="ai-logo gemini">★</div>
@@ -750,7 +678,6 @@
         </div>
       </div>
 
-      <!-- COMPARE -->
       <div class="ai-content" id="ai-compare">
         <div class="card-title" style="margin-bottom:16px">📊 ตารางเปรียบเทียบ 3 AI Models</div>
         <table class="comp-table">
@@ -795,34 +722,13 @@
             </tr>
           </tbody>
         </table>
-        <div style="margin-top:16px; padding:14px; background:var(--surface); border-radius:8px; font-size:13px; color:var(--muted); border-left:3px solid var(--accent3);">
+        <div style="margin-top:16px; padding:14px; background:var(--bg); border-radius:8px; font-size:13px; color:var(--muted); border-left:3px solid var(--accent3);">
           <strong style="color:var(--accent3)">🎯 สรุป:</strong> ใช้ ChatGPT สำหรับข้อเสนอเชิงนโยบาย, Claude สำหรับเข้าใจบริบทสังคม, และ Gemini สำหรับตรวจสอบคุณภาพข้อมูล การใช้ทั้ง 3 ร่วมกันให้มุมมองรอบด้านที่สุด
         </div>
       </div>
     </div>
   </div>
 
-  <!-- LIVE AI CHAT -->
-  <div>
-    <div class="section-label">AI Q&A</div>
-    <div class="section-title">ถามข้อมูล Dashboard ด้วย AI</div>
-    <div class="section-desc">พิมพ์คำถามเกี่ยวกับข้อมูลผู้เสียชีวิตทางถนน แล้วให้ Claude วิเคราะห์ให้</div>
-    <div class="card">
-      <div class="quick-q">
-        <button class="quick-btn" onclick="setQ('ทำไมรถจักรยานยนต์ถึงอันตรายที่สุด?')">🏍️ ทำไมรถจักรยานยนต์อันตราย?</button>
-        <button class="quick-btn" onclick="setQ('ควรออกนโยบายอะไรเพื่อลดผู้เสียชีวิตกลุ่ม 65 ปีขึ้นไป?')">👴 นโยบายสำหรับผู้สูงอายุ?</button>
-        <button class="quick-btn" onclick="setQ('ทำไมเดือนมกราคมถึงมีผู้เสียชีวิตสูงสุด?')">📅 ทำไมมกราคมสูงสุด?</button>
-        <button class="quick-btn" onclick="setQ('วิเคราะห์แนวโน้ม 5 ปีว่าสถานการณ์ดีขึ้นหรือแย่ลง?')">📈 แนวโน้ม 5 ปีเป็นอย่างไร?</button>
-      </div>
-      <div class="prompt-area">
-        <textarea id="userQ" placeholder="เช่น: กลุ่มอายุไหนต้องได้รับการดูแลเป็นพิเศษ? หรือ ข้อมูลบอกอะไรเกี่ยวกับช่วงเวลาที่อันตรายที่สุด?"></textarea>
-        <button class="btn-ask" onclick="askAI()">🤖 ถาม Claude</button>
-      </div>
-      <div class="ai-response-box" id="aiResponse" style="display:none"></div>
-    </div>
-  </div>
-
-  <!-- DATA STORY -->
   <div>
     <div class="section-label">Data Storytelling</div>
     <div class="section-title">เล่าเรื่องผ่านข้อมูล</div>
@@ -841,309 +747,31 @@
       <div class="story-block">
         <div class="story-step">
           <div class="story-circle s2">D</div>
-          <div class="story-line"></div>
+          <div class="story-line" style="background: transparent;"></div>
         </div>
         <div class="story-content">
           <h3 style="color:var(--accent4)">🔵 Data — ข้อมูล</h3>
           <p>ใช้ข้อมูลจากระบบบูรณาการ 3 ฐาน (มรณบัตร, E-claim, ตำรวจ) รวม 80,621 records ครอบคลุม 5 ปี 77 จังหวัด วิเคราะห์ตามมิติเพศ อายุ ยานพาหนะ เวลา และพื้นที่ ด้วย Python (Pandas/Matplotlib) และ AI 3 โมเดล</p>
         </div>
       </div>
-      <div class="story-block">
-        <div class="story-step">
-          <div class="story-circle s3">I</div>
-          <div class="story-line"></div>
-        </div>
-        <div class="story-content">
-          <h3 style="color:var(--accent2)">🟡 Insight — สิ่งที่ค้นพบ</h3>
-          <p>ข้อมูลชี้ชัด 5 ประเด็นวิกฤต: <strong>รถจักรยานยนต์</strong>คือตัวการหลัก (79%), <strong>ผู้ชาย</strong>เสียชีวิตมากกว่า 3:1 สะท้อนพฤติกรรมเสี่ยง, <strong>ผู้สูงอายุ</strong>กลุ่มใหญ่ที่สุดจากการขาดทางเลือก, <strong>มกราคม</strong>เดือนมรณะของเทศกาล, และ <strong>19:00 น.</strong> ชั่วโมงอันตรายสูงสุด</p>
-        </div>
-      </div>
-      <div class="story-block">
-        <div class="story-step">
-          <div class="story-circle s4">A</div>
-        </div>
-        <div class="story-content">
-          <h3 style="color:var(--accent3)">🟢 Action — สิ่งที่ควรทำ</h3>
-          <p>เร่งมาตรการ <strong>ก่อน</strong>เทศกาล ไม่ใช่แค่ระหว่างเทศกาล · บังคับใช้ Motorcycle Lane และ Helmet Law อย่างจริงจัง · สร้าง Micro-mobility ในชนบทลดการพึ่งพารถจักรยานยนต์ของผู้สูงอายุ · เพิ่ม Smart Lighting ในจุดเสี่ยงช่วง Golden Hour (17:00–20:00 น.)</p>
-        </div>
-      </div>
     </div>
   </div>
 
 </main>
-
 <footer>
-  <p>📊 Data Analysis Dashboard · ผู้เสียชีวิตจากอุบัติเหตุทางถนน 2564–2568 · ข้อมูลจาก <strong>data.go.th</strong></p>
-  <p style="margin-top:6px">จัดทำโดย <strong>Apasita Pasukree</strong> · มหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ · สาขาปัญญาประดิษฐ์</p>
+  <p>Dashboard Design · 2564–2568 Analysis</p>
 </footer>
 
 <script>
-// ======= DATA =======
-const DATA = {
-  years: ['2564','2565','2566','2567','2568'],
-  deaths: [16957, 17379, 12730, 17477, 16078],
-  months: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'],
-  monthDeaths: [1634,1440,1370,1470,1250,1293,1170,1214,1155,1250,1308,1524],
-  sex: ['ชาย','หญิง','ไม่ระบุ'],
-  sexCount: [61214, 18012, 1394],
-  vehicles: ['รถจักรยานยนต์','ไม่ระบุ','รถยนต์','คนเดินเท้า','รถบรรทุกเล็ก','รถจักรยาน','รถบรรทุกหนัก'],
-  vehicleCount: [38254, 33583, 4322, 1682, 1306, 795, 386],
-  ageGroups: ['0-15','16-25','26-35','36-45','46-55','56-65','65+'],
-  ageCount: [4466, 14001, 12670, 11511, 12276, 11881, 12280],
-  provinces: ['กรุงเทพฯ','นครราชสีมา','ชลบุรี','เชียงใหม่','อุบลราชธานี','ระยอง','ขอนแก่น','เชียงราย','สงขลา','ปทุมธานี'],
-  provCount: [3530,3461,3027,2607,2248,2103,1987,1924,1610,1605],
-  hours: Array.from({length:24},(_,i)=>i+':00'),
-  hourCount: [327,239,177,151,134,174,228,381,348,297,321,349,340,322,338,373,424,483,609,750,560,477,408,415],
-  sexMale: [12342,13524,9752,13399,12197],
-  sexFemale: [3225,3853,2976,4077,3881],
-};
-
-const THEME = {
-  red: '#e63946', orange: '#f4a261', teal: '#2a9d8f',
-  blue: '#457b9d', gold: '#f6c90e', purple: '#9b72cf',
-  muted: '#6b7a99', text: '#e8edf5', bg: '#1a2236', border: '#1e3a5f'
-};
-
-const defaultOpts = {
-  responsive: true,
-  maintainAspectRatio: true,
-  plugins: {
-    legend: { labels: { color: THEME.text, font: { family: 'Sarabun', size: 12 } } },
-    tooltip: { bodyFont: { family: 'Sarabun' }, titleFont: { family: 'Sarabun' } }
-  },
-  scales: {
-    x: { ticks: { color: THEME.muted, font: { family: 'Sarabun', size: 11 } }, grid: { color: 'rgba(30,58,95,0.3)' } },
-    y: { ticks: { color: THEME.muted, font: { family: 'Sarabun', size: 11 } }, grid: { color: 'rgba(30,58,95,0.3)' } }
+  // ฟังก์ชันสลับ Tab สำหรับ AI Analysis
+  function switchAI(model) {
+    document.querySelectorAll('.ai-tab').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.ai-content').forEach(content => content.classList.remove('active'));
+    
+    event.target.classList.add('active');
+    document.getElementById('ai-' + model).classList.add('active');
   }
-};
-
-// Year trend chart
-new Chart(document.getElementById('yearChart'), {
-  type: 'bar',
-  data: {
-    labels: DATA.years,
-    datasets: [{
-      label: 'ผู้เสียชีวิต',
-      data: DATA.deaths,
-      backgroundColor: DATA.years.map(y => y==='2566' ? 'rgba(246,201,14,0.7)' : 'rgba(230,57,70,0.7)'),
-      borderColor: DATA.years.map(y => y==='2566' ? THEME.gold : THEME.red),
-      borderWidth: 2,
-      borderRadius: 4,
-    }]
-  },
-  options: {
-    ...defaultOpts,
-    plugins: {
-      ...defaultOpts.plugins,
-      legend: { display: false },
-      tooltip: {
-        ...defaultOpts.plugins.tooltip,
-        callbacks: {
-          afterLabel: (c) => c.dataIndex===2 ? '⚠️ อาจข้อมูลไม่ครบ' : ''
-        }
-      }
-    }
-  }
-});
-
-// Month chart
-new Chart(document.getElementById('monthChart'), {
-  type: 'line',
-  data: {
-    labels: DATA.months,
-    datasets: [{
-      label: 'ผู้เสียชีวิต (2568)',
-      data: DATA.monthDeaths,
-      borderColor: THEME.orange,
-      backgroundColor: 'rgba(244,162,97,0.1)',
-      fill: true,
-      tension: 0.4,
-      pointBackgroundColor: DATA.monthDeaths.map(v => v===1634||v===1524 ? THEME.red : THEME.orange),
-      pointRadius: DATA.monthDeaths.map(v => v===1634||v===1524 ? 7 : 4),
-      pointBorderColor: '#fff',
-      pointBorderWidth: 2,
-    }]
-  },
-  options: { ...defaultOpts, plugins: { ...defaultOpts.plugins, legend: { display: false } } }
-});
-
-// Sex donut
-new Chart(document.getElementById('sexChart'), {
-  type: 'doughnut',
-  data: {
-    labels: DATA.sex,
-    datasets: [{
-      data: DATA.sexCount,
-      backgroundColor: [THEME.blue, THEME.teal, THEME.muted],
-      borderColor: '#1a2236',
-      borderWidth: 3,
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: true,
-    plugins: {
-      legend: { position: 'bottom', labels: { color: THEME.text, font: { family: 'Sarabun', size: 12 }, padding: 12 } },
-      tooltip: defaultOpts.plugins.tooltip
-    }
-  }
-});
-
-// Vehicle horizontal bar
-new Chart(document.getElementById('vehicleChart'), {
-  type: 'bar',
-  data: {
-    labels: DATA.vehicles,
-    datasets: [{
-      label: 'ราย',
-      data: DATA.vehicleCount,
-      backgroundColor: DATA.vehicles.map((v,i) => i===0?'rgba(230,57,70,0.8)':i===1?'rgba(107,122,153,0.5)':'rgba(69,123,157,0.6)'),
-      borderRadius: 3,
-    }]
-  },
-  options: {
-    ...defaultOpts,
-    indexAxis: 'y',
-    plugins: { ...defaultOpts.plugins, legend: { display: false } },
-    scales: {
-      x: defaultOpts.scales.x,
-      y: { ...defaultOpts.scales.y, ticks: { ...defaultOpts.scales.y.ticks, font: { family: 'Sarabun', size: 10 } } }
-    }
-  }
-});
-
-// Age bar
-new Chart(document.getElementById('ageChart'), {
-  type: 'bar',
-  data: {
-    labels: DATA.ageGroups,
-    datasets: [{
-      label: 'ราย',
-      data: DATA.ageCount,
-      backgroundColor: DATA.ageCount.map(v => v===Math.max(...DATA.ageCount)?'rgba(246,201,14,0.8)':'rgba(69,123,157,0.6)'),
-      borderRadius: 3,
-    }]
-  },
-  options: { ...defaultOpts, plugins: { ...defaultOpts.plugins, legend: { display: false } } }
-});
-
-// Province bar
-new Chart(document.getElementById('provChart'), {
-  type: 'bar',
-  data: {
-    labels: DATA.provinces,
-    datasets: [{
-      label: 'ราย',
-      data: DATA.provCount,
-      backgroundColor: DATA.provCount.map((v,i) => i<2?'rgba(230,57,70,0.75)':'rgba(69,123,157,0.6)'),
-      borderRadius: 3,
-    }]
-  },
-  options: {
-    ...defaultOpts,
-    indexAxis: 'y',
-    plugins: { ...defaultOpts.plugins, legend: { display: false } },
-    scales: {
-      x: defaultOpts.scales.x,
-      y: { ...defaultOpts.scales.y, ticks: { ...defaultOpts.scales.y.ticks, font: { family: 'Sarabun', size: 10 } } }
-    }
-  }
-});
-
-// Hour line
-new Chart(document.getElementById('hourChart'), {
-  type: 'line',
-  data: {
-    labels: DATA.hours,
-    datasets: [{
-      label: 'จำนวนผู้เสียชีวิต',
-      data: DATA.hourCount,
-      borderColor: THEME.teal,
-      backgroundColor: 'rgba(42,157,143,0.1)',
-      fill: true,
-      tension: 0.4,
-      pointBackgroundColor: DATA.hourCount.map(v => v===750?THEME.red:THEME.teal),
-      pointRadius: DATA.hourCount.map(v => v===750?7:3),
-    }]
-  },
-  options: { ...defaultOpts, plugins: { ...defaultOpts.plugins, legend: { display: false } } }
-});
-
-// Sex trend
-new Chart(document.getElementById('sexTrendChart'), {
-  type: 'line',
-  data: {
-    labels: DATA.years,
-    datasets: [
-      { label: 'ชาย', data: DATA.sexMale, borderColor: THEME.blue, backgroundColor: 'rgba(69,123,157,0.1)', fill: true, tension: 0.4, pointRadius: 5, pointBorderColor:'#fff', pointBorderWidth:2 },
-      { label: 'หญิง', data: DATA.sexFemale, borderColor: THEME.teal, backgroundColor: 'rgba(42,157,143,0.1)', fill: true, tension: 0.4, pointRadius: 5, pointBorderColor:'#fff', pointBorderWidth:2 },
-    ]
-  },
-  options: { ...defaultOpts }
-});
-
-// AI Tab switch
-function switchAI(tab) {
-  document.querySelectorAll('.ai-tab').forEach((t,i) => {
-    t.classList.toggle('active', ['claude','chatgpt','gemini','compare'][i]===tab);
-  });
-  document.querySelectorAll('.ai-content').forEach(c => c.classList.remove('active'));
-  document.getElementById('ai-'+tab).classList.add('active');
-}
-
-// Quick Q buttons
-function setQ(q) {
-  document.getElementById('userQ').value = q;
-}
-
-// AI Q&A via Anthropic API
-async function askAI() {
-  const q = document.getElementById('userQ').value.trim();
-  if (!q) return;
-  const btn = document.querySelector('.btn-ask');
-  const box = document.getElementById('aiResponse');
-  btn.disabled = true;
-  btn.textContent = '⏳ กำลังวิเคราะห์...';
-  box.style.display = 'block';
-  box.className = 'ai-response-box loading';
-  box.textContent = 'Claude กำลังวิเคราะห์ข้อมูล...';
-
-  const context = `คุณเป็นผู้เชี่ยวชาญวิเคราะห์ข้อมูลสาธารณสุข วิเคราะห์ข้อมูลผู้เสียชีวิตจากอุบัติเหตุทางถนนในประเทศไทย 5 ปี (2564-2568)
-
-ข้อมูลสำคัญ:
-- รวม 80,621 ราย | เฉลี่ย 16,124 ราย/ปี (~44 ราย/วัน)
-- จำนวนรายปี: 2564=16,957 | 2565=17,379 | 2566=12,730 (ต่ำผิดปกติ) | 2567=17,477 | 2568=16,078
-- เพศ: ชาย 76% (61,214) | หญิง 22% (18,012) | ไม่ระบุ 2%
-- รถจักรยานยนต์ 38,254 ราย = 79% ของพาหนะที่ระบุได้ | รถยนต์ 4,322 | คนเดินเท้า 1,682
-- กลุ่มอายุ: 65+ มากสุด 12,280 | 16-25: 14,001 | 26-35: 12,670 | ต่ำสุด 0-15: 4,466
-- เดือนอันตราย: มกราคม 1,634 | ธันวาคม 1,524 | ต่ำสุด กันยายน 1,155
-- ชั่วโมงอันตราย: 19:00=750 | 18:00=609 | 20:00=560 | ต่ำสุด 04:00=134
-- จังหวัดสูงสุด: กรุงเทพฯ 3,530 | นครราชสีมา 3,461 | ชลบุรี 3,027 | เชียงใหม่ 2,607
-
-ตอบเป็นภาษาไทย กระชับ เป็นประโยชน์ และให้ข้อเสนอแนะที่นำไปปฏิบัติได้จริง`;
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: context,
-        messages: [{ role: 'user', content: q }]
-      })
-    });
-    const data = await res.json();
-    const text = data.content?.map(b => b.text||'').join('') || 'ไม่สามารถรับคำตอบได้';
-    box.className = 'ai-response-box';
-    box.textContent = text;
-  } catch(e) {
-    box.className = 'ai-response-box error';
-    box.textContent = 'เกิดข้อผิดพลาดในการเชื่อมต่อ API กรุณาลองใหม่อีกครั้ง\n\n' + e.message;
-  }
-  btn.disabled = false;
-  btn.textContent = '🤖 ถาม Claude';
-}
 </script>
+
 </body>
 </html>
