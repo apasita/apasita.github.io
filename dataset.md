@@ -47,7 +47,7 @@ window.addEventListener("message", function(e) {
 });
 </script>
 
-> 💡 **เปิดแบบเต็มหน้าจอ** → [คลิกที่นี่]({{ '/dashboard.html' | relative_url }}){:target="_blank"}
+> 💡 **เปิดแบบเต็มหน้าจอ** → [คลิกที่นี่](dashboard/dashboard.html)
 
 ---
 
