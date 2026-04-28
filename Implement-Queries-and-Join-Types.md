@@ -1,6 +1,5 @@
 ---
 title: "Lab 9.1.12 — Implement Queries and Join Types"
-parent: Lab Reports
 nav_order: 1
 ---
 
