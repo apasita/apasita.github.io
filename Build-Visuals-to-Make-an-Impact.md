@@ -1,6 +1,5 @@
 ---
 title: "Lab 14.1.16 — Build Visuals to Make an Impact"
-parent: Lab Reports
 nav_order: 2
 ---
 
