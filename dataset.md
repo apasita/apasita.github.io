@@ -25,27 +25,7 @@ nav_order: 2
 
 ## 📈 Interactive Dashboard
 
-<div style="border-radius: 12px; overflow: hidden; border: 1px solid #e2dbf7; box-shadow: 0 4px 20px rgba(107,63,160,0.10); margin: 1.5rem 0;">
-  <iframe
-    id="dashboard-frame"
-    src="{{ '/dashboard.html' | relative_url }}"
-    width="100%"
-    height="5200"
-    frameborder="0"
-    scrolling="no"
-    style="display: block; border: none; overflow: hidden;"
-    title="Dashboard ผู้เสียชีวิตจากอุบัติเหตุทางถนน 2564–2568">
-  </iframe>
-</div>
-
-<script>
-window.addEventListener("message", function(e) {
-  if (e.data && e.data.iframeHeight) {
-    var f = document.getElementById("dashboard-frame");
-    if (f) f.height = e.data.iframeHeight + 40;
-  }
-});
-</script>
+![SSMS Overview](images/Ex-dashboard.png)
 
 > 💡 **เปิดแบบเต็มหน้าจอ** → [คลิกที่นี่](dashboard/dashboard.html)
 
