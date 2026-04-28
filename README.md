@@ -59,7 +59,6 @@
 1. ดาวน์โหลดหรือ Clone repository นี้
 2. เปิดไฟล์ `dashboard/dashboard.html` ด้วย Browser ใด ๆ
 3. Dashboard จะแสดงกราฟ Interactive ทั้งหมดทันที
-4. ใช้ฟีเจอร์ **AI Q&A** เพื่อถามคำถามเกี่ยวกับข้อมูล
 
 [→ ดูผลการวิเคราะห์ Dataset แบบละเอียด](dataset.md)
 
