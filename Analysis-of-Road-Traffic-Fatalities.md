@@ -70,7 +70,7 @@ nav_order: 2
 
 ดู Dashboard
 
-[Analysis of Road Traffic Fatalities (2021–2025)](dashboard/dashboard.html)
+[Analysis of Road Traffic Fatalities (2021–2025)](https://github.com/apasita/apasita.github.io/)
 
 ![Dashboard วิเคราะห์ข้อมูลอุบัติเหตุทางถนน](images/Ex-dashboard.png)
 
